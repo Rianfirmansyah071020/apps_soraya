@@ -1,0 +1,81 @@
+@page {
+    size: inherit;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+h4,h6 {
+    color: #f26d35;
+}
+
+.text-orange {
+    color: #f26d35;
+}
+
+.divisi {
+    background-color: #f26d35;
+    color: #fff;
+    font-size: 40px;
+    /* height: 26rem; */
+        
+}
+
+.pegawai {
+    background-color: #e9cec3;
+}
+    
+.nama_pegawai {
+    border-bottom: 2px solid #f26d35;
+    padding-bottom: 5px;
+    display: block;
+    
+}
+
+.tagline {
+    color: #fff;
+    letter-spacing: 1px;
+    background-color: #f26d35;
+    padding: 2px 7px;
+    font-size: 13px;
+    
+    
+}
+
+.wadah-tagline {
+    margin-top: 15px;
+}
+
+.nama-divisi {
+    writing-mode: vertical-lr;
+    display: inline;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 15px;
+    transform: rotate(180deg);
+    margin-top: 180px;
+    margin-left: 5px;
+
+    
+}
+
+.wadah-nama-mitra {
+    margin-top: -43px !important;
+}
+
+.card-custom {
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    width: 91mm !important;
+}
+
+@media print {
+    .pagebreak { clear: both; page-break-before: always; } /* page-break-after works, as well */
+
+    @page {size: portrait}
+}
+
+
+
+

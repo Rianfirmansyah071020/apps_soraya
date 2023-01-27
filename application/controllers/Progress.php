@@ -1355,11 +1355,15 @@ class Progress extends MY_Controller
             ->where('perencanaan.id_progress', $id_progress)
             ->first();
 
+
         $this->progress->table = 'progress';
         $data['data_progress'] = $this->progress->where('id', $id_progress)->first();
         $this->progress->table = 'jenis_bantal';
         $data['jenis_bantal'] = $this->progress->get();
         $data['jumlah_bantal'] = $this->progress->count();
+
+        // $this->penggunting->table = 'penggunting';
+        // $data['mitra'] = $this->penggunting->where('id_progress', $id_progress)->get();
 
         foreach ($data['jenis_bantal'] as $row) {
             $this->progress->table = 'perencanaan';
@@ -1376,6 +1380,12 @@ class Progress extends MY_Controller
                 ->where('perencanaan.id_jenis_bantal', $row->id)
                 ->where('perencanaan.id_progress', $id_progress)->get();
         }
+
+        $query = "SELECT penggunting.id_mitra as 'id_mitra', mitra.nama as 'nama_mitra' FROM penggunting INNER JOIN mitra ON penggunting.id_mitra=mitra.id INNER JOIN progress ON penggunting.id_progress=progress.id WHERE penggunting.id_progress='$id_progress'";
+        $data['mitra'] = $this->db->query($query)->result();
+
+        // var_dump($data['mitra']);
+        // die;
 
         $data['page']         = 'pages/progress/preview';
         $data['nav_title']    = 'realisasi';

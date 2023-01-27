@@ -78,7 +78,7 @@ class Store extends MY_Controller
             $getDistribusi = $this->store->select([
                 'distribusi.id_progress', 'distribusi.id_mitra', 'distribusi.id_mitrawork', 'distribusi.jumlah_set', 'distribusi.status_pekerjaan', 'distribusi.id AS id_distribusi',
                 '(distribusi.jumlah_set - store.jumlah_store) AS sisa_set',
-                'mitra.id', 'store.jumlah_store', 'store.created_at', 'store.keterangan',
+                'mitra.id', 'store.jumlah_store', 'store.created_at',
                 'mitra.nama', 'mitrawork.nama_mitrawork'
             ])
                 ->join('mitra')

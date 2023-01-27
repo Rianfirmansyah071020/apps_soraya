@@ -7,7 +7,6 @@
                 <th>No DO</th>
                 <th>Motif</th>
                 <th>Tanggal</th>
-                <th>Keterangan</th>
                 <th class="text-center">Action</th>
             </tr>
         </thead>
@@ -19,7 +18,6 @@
                 <td><?= $row->id; ?></td>
                 <td><?= $row->motif; ?></td>
                 <td><?= date_format(new DateTime($row->tanggal), "d/m/Y"); ?></td>
-                <td><?= $row->keterangan ?></td>
                 <!-- <td><?= date_format(new DateTime($row->tanggal), "H:i"); ?>&nbsp;WIB</td> -->
                 <td>
                     <div class="text-center">
